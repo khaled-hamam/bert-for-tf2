@@ -127,7 +127,7 @@ def load_vocab(vocab_file):
             token = convert_to_unicode(reader.readline())
             if not token:
                 break
-            token = token.strip()
+            # token = token.strip()
             vocab[token] = index
             index += 1
     return vocab
@@ -137,6 +137,8 @@ def convert_by_vocab(vocab, items):
     """Converts a sequence of [tokens|ids] using the vocab."""
     output = []
     for item in items:
+        print("$$ BATE5A", item, sep='')
+        print("$$ BATE5A2", vocab[item], sep='')
         output.append(vocab[item])
     return output
 
