@@ -335,7 +335,7 @@ class WordpieceTokenizer(object):
             is_bad = False
             start = 0
             sub_tokens = []
-            print('$$ WORD', token)
+            print('$$ WORD', token, sep='')
             while start < len(chars):
                 end = len(chars)
                 cur_substr = None
@@ -344,7 +344,7 @@ class WordpieceTokenizer(object):
                     if start > 0:
                         substr = "##" + substr
                     if substr in self.vocab:
-                        print('$$ SUBSTR', substr)
+                        print('$$ SUBSTR', substr, sep='')
                         cur_substr = substr
                         break
                     end -= 1
